@@ -15,11 +15,13 @@ class reportList(APIView):
         serializer = reportSerializer(report, many=True)
         return Response(serializer.data)
 
-    # return by id    
+    # return by id
+    """    
     def get(self, request, pk):
         report = Report.objects.get(pk=pk)
         serializer = reportSerializer(report)
         return Response(serializer.data)
+    """        
 
     def post(self, request):
         serializer = reportSerializer(data=request.data)
