@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+from report import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('reports/', views.reportList.as_view()),
+    # delete event
+    path('reports/<int:pk>',views.reportList.as_view())
 ]
