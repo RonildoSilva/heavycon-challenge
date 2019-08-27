@@ -9,11 +9,18 @@ from . serializers import reportSerializer
 
 class reportList(APIView):
     
+    # return all data
     def get(self, request):
         report = Report.objects.all()
         serializer = reportSerializer(report, many=True)
         return Response(serializer.data)
-    
+
+    # return by id    
+    def get(self, request, pk):
+        report = Report.objects.get(pk=pk)
+        serializer = reportSerializer(report)
+        return Response(serializer.data)
+
     def post(self, request):
         serializer = reportSerializer(data=request.data)
         if serializer.is_valid():
