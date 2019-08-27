@@ -17,14 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from report import views
-from reportresponse import views
+from reportresponse import response_views
+
+from report import views
+from reportresponse import response_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('reports/', views.reportList.as_view()),
+    path('reports/', views.reportList.as_view()),
     
     # delete event
     #path('reports/<int:pk>',views.reportList.as_view()),
 
-    path('reportresponses/', views.reportResponseList.as_view())
+    path('reportresponses/', response_views.reportResponseList.as_view(), name='reponses')
 ]
