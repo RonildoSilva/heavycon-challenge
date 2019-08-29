@@ -17,10 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from report import views
-from reportresponse import response_views
-
-from report import views
-from reportresponse import response_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +25,6 @@ urlpatterns = [
     # delete event
     #path('reports/<int:pk>',views.reportList.as_view()),
 
-    path('reportresponses/', response_views.reportResponseList.as_view(), name='reponses')
+    path('reportresponses/', views.reportResponseList.as_view(), name='reponses'),
+    path('users/', views.userList.as_view())
 ]

@@ -9,3 +9,12 @@ class Report(models.Model):
 
     def __str__(self):
         return self.message
+
+
+class ReportResponse(models.Model):
+    message = models.CharField(max_length=255)
+    report  = models.ForeignKey(Report, on_delete=models.CASCADE, default='')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default='')
+
+    def __str__(self):
+        return self.message
