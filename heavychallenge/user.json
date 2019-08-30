@@ -1,0 +1,66 @@
+[
+{
+    "model": "report.user",
+    "pk": 101,
+    "fields": {
+        "username": "Dav",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 102,
+    "fields": {
+        "username": "Vad",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 103,
+    "fields": {
+        "username": "XXX",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 104,
+    "fields": {
+        "username": "CCC",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 105,
+    "fields": {
+        "username": "Dav",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 109,
+    "fields": {
+        "username": "Vad",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 106,
+    "fields": {
+        "username": "XXX",
+        "password": "---"
+    }
+},
+{
+    "model": "report.user",
+    "pk": 107,
+    "fields": {
+        "username": "CCC",
+        "password": "---"
+    }
+}
+]
