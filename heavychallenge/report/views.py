@@ -17,7 +17,13 @@ from django.core.exceptions import ObjectDoesNotExist
 
 class reportList(APIView):
 
+    def get(self, request, id=None):
+        report = Report.objects.filter(author = id)
+        serializer = reportSerializer(report, many=True)
+        return Response(serializer.data)
+
     # return by id / all
+    """
     def get(self, request, id=None):
         try:
             report = Report.objects.get(pk=id)
@@ -27,7 +33,7 @@ class reportList(APIView):
             report = Report.objects.all()
             serializer = reportSerializer(report, many=True)
             return Response(serializer.data)
-            
+    """     
 
     def post(self, request):
         serializer = reportSerializer(data=request.data)
@@ -70,4 +76,11 @@ class userList(APIView):
             users = User.objects.all()
             serializer = userSerializer(users, many=True)
             return Response(serializer.data)
+    
+    def post(self, request):
+        serializer = userSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         

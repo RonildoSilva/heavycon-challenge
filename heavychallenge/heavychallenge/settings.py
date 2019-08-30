@@ -27,7 +27,8 @@ DEBUG = True
 
 #ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ["https://127.0.0.1","localhost", ]
+ALLOWED_HOSTS = ["https://127.0.0.1","localhost","127.0.0.1" ]
+
 CORS_ORIGIN_WHITELIST = (
 "http://127.0.0.1:9000",
 "http://localhost:9000",

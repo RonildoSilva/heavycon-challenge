@@ -1,0 +1,24 @@
+[
+    {
+        "model": "report.report",
+        "pk": 11,
+        "fields": {
+        "message": "Ola",
+        "author": 5,
+        "supervisors": [
+            4
+        ]
+        }
+    },
+    {
+        "model": "report.report",
+        "pk": 12,
+        "fields": {
+            "message": "Ola",
+            "author": 5,
+            "supervisors": [
+                4
+            ]
+        }
+    }
+]
