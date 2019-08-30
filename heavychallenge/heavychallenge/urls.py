@@ -30,4 +30,5 @@ urlpatterns = [
     path('reportresponses/', views.reportResponseList.as_view(), name='reponses'),
 
     path('users/', views.userList.as_view()),
+    path('user/<int:id>',views.userList.as_view(), name='get_user_by_id'),
 ]

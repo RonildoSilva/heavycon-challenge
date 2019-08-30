@@ -61,7 +61,13 @@ class reportResponseList(APIView):
 class userList(APIView):
 
     # return all data
-    def get(self, request):
-        users = User.objects.all()
-        serializer = userSerializer(users, many=True)
-        return Response(serializer.data)
+    def get(self, request, id=None):
+        try:
+            user = User.objects.get(pk=id)
+            serializer = userSerializer(user)
+            return Response(serializer.data)
+        except:
+            users = User.objects.all()
+            serializer = userSerializer(users, many=True)
+            return Response(serializer.data)
+        
