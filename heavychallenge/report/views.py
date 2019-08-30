@@ -13,21 +13,21 @@ from . serializers import reportSerializer
 from . serializers import reportResponseSerializer
 from . serializers import userSerializer
 
-class reportList(APIView):
-    
-    # return all data
-    def get(self, request):
-        report = Report.objects.all()
-        serializer = reportSerializer(report, many=True)
-        return Response(serializer.data)
+from django.core.exceptions import ObjectDoesNotExist
 
-    # return by id
-    """    
-    def get(self, request, pk):
-        report = Report.objects.get(pk=pk)
-        serializer = reportSerializer(report)
-        return Response(serializer.data)
-    """        
+class reportList(APIView):
+
+    # return by id / all
+    def get(self, request, id=None):
+        try:
+            report = Report.objects.get(pk=id)
+            serializer = reportSerializer(report)
+            return Response(serializer.data)
+        except:
+            report = Report.objects.all()
+            serializer = reportSerializer(report, many=True)
+            return Response(serializer.data)
+            
 
     def post(self, request):
         serializer = reportSerializer(data=request.data)
@@ -36,8 +36,8 @@ class reportList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk, format=None):
-        event = Report.objects.get(pk=pk)
+    def delete(self, request, id, format=None):
+        event = Report.objects.get(pk=id)
         event.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 

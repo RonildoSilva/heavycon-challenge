@@ -20,11 +20,14 @@ from report import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('reports/', views.reportList.as_view()),
-    
+    path('report/<int:id>',views.reportList.as_view(), name='get_report_by_id'),
+
     # delete event
     #path('reports/<int:pk>',views.reportList.as_view()),
 
     path('reportresponses/', views.reportResponseList.as_view(), name='reponses'),
-    path('users/', views.userList.as_view())
+
+    path('users/', views.userList.as_view()),
 ]
