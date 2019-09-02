@@ -61,6 +61,8 @@ CORS_ALLOW_HEADERS = (
 
 ##
 
+# Pagination
+
 # Application definition
 
 INSTALLED_APPS = [

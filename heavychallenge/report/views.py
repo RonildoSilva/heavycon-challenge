@@ -14,10 +14,12 @@ from . serializers import reportResponseSerializer
 from . serializers import userSerializer
 
 from django.core.exceptions import ObjectDoesNotExist
+from django.views import generic
 
 class reportList(APIView):
 
     def get(self, request, id=None):
+        paginate_by = 3
         report = Report.objects.filter(author = id)
         serializer = reportSerializer(report, many=True)
         return Response(serializer.data)

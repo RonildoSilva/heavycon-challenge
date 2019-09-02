@@ -1,66 +1,20 @@
 [
-{
-    "model": "report.user",
-    "pk": 101,
-    "fields": {
-        "username": "Dav",
-        "password": "---"
+    {
+        "model": "auth.user",
+        "pk": 17,
+        "fields": {
+            "password": "123",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "Nick",
+            "first_name": "Nick",
+            "last_name": "Fury",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2019-08-30T15:29:12.981Z",
+            "groups": [],
+            "user_permissions": []
+        }
     }
-},
-{
-    "model": "report.user",
-    "pk": 102,
-    "fields": {
-        "username": "Vad",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 103,
-    "fields": {
-        "username": "XXX",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 104,
-    "fields": {
-        "username": "CCC",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 105,
-    "fields": {
-        "username": "Dav",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 109,
-    "fields": {
-        "username": "Vad",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 106,
-    "fields": {
-        "username": "XXX",
-        "password": "---"
-    }
-},
-{
-    "model": "report.user",
-    "pk": 107,
-    "fields": {
-        "username": "CCC",
-        "password": "---"
-    }
-}
 ]

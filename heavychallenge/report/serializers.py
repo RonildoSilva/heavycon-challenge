@@ -7,8 +7,8 @@ class userSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        #fields = ('id','username','email')
-        fields = '__all__'
+        fields = ('id','first_name','last_name','email')
+        #fields = '__all__'
 
 class reportResponseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,11 +27,11 @@ class reportSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
 
-        supervisors_data = validated_data.pop('supervisors')
-        report = Report.objects.create(**validated_data)
-        
+        supervisors_data = validated_data.pop('supervisors')        
         author_data = validated_data.pop('author')
 
+        report = Report.objects.create(**validated_data)
+        
         for supervisor_data in supervisors_data:
             User.objects.create(report=report, **supervisor_data)
         
